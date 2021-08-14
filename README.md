@@ -10,7 +10,7 @@ Actually, the project is meant to replace the analog pointer instrument of the R
 The project needs your help, there are still many to do.
 A todo list will also come in the next days. i am very grateful for help. 
 
-#### These components are required as a minimum
+### These components are required as a minimum
 
 * Teensy 4.0 (recommended) or Teensy 4.1
 * Audio Adaptor Board for Teensy 4.x Rev D
@@ -24,7 +24,7 @@ A todo list will also come in the next days. i am very grateful for help.
 
 Many other displays are also possible if they have the required connectors, have the ILI9341 controller and a resolution of 320x240 px.
 
-#### Display connection diagram
+### Display connection diagram
 
 | Display        | Teensy                                            |
 | -------------- | ------------------------------------------------- |
@@ -40,13 +40,13 @@ Many other displays are also possible if they have the required connectors, have
 
 If the display is operated with 3.3V, which is the case in this project, then the jumper **J1** on the display must be closed!
 
-#### Connection of the pushbutton
+### Connection of the pushbutton
 
 | Button                                | Teensy |
 | ------------------------------------- | ------ |
 | Pushbutton between Teensy PIN and GND | 0      |
 
-#### Connection of the infrared receiver "Vishay TSOP 4838"
+### Connection of the infrared receiver "Vishay TSOP 4838"
 
 | TSOP 4838   | Teensy                          |
 | ----------- | ------------------------------- |
@@ -54,7 +54,7 @@ If the display is operated with 3.3V, which is the case in this project, then th
 | 2 (**GND**) | GND (top, between Vin and 3.3V) |
 | 3 (**VS**)  | 3.3V                            |
 
-#### Used libraries
+### Used libraries
 
 1. Optimized ILI9341 screen driver library for Teensy 4/4.1, with vsync and differential updates: <https://github.com/vindar/ILI9341_T4>
 2. TGX - a tiny/teensy graphics library: <https://github.com/vindar/tgx>
@@ -62,7 +62,7 @@ If the display is operated with 3.3V, which is the case in this project, then th
 4. IRremote Arduino Library: <https://github.com/Arduino-IRremote/Arduino-IRremote>
 TeensyID: https://github.com/sstaub/TeensyID
 
-#### Used development software
+### Used development software
 
 Arduino IDE 1.8.15
 Teensyduino, Version 1.54
@@ -82,7 +82,7 @@ Teensyduino, Version 1.54
 
 ![spectrum07](screenshots/spectrum07.png) ![spectrum08](screenshots/spectrum08.png) ![spectrum09](screenshots/spectrum09.png)
 
-#### Accessories
+### Accessories
 
 The **ConfigTool** directory contains a Windows desktop configuration program for conveniently setting all modes, colors and calibrations. Furthermore, the infrared remote control can be set and screenshots directly from the display are also possible.
 No installation is required and no system changes are made. Runs on all 64Bit systems from Windows7 to Windows10 (also server).
