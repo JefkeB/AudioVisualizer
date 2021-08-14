@@ -56,10 +56,10 @@ If the display is operated with 3.3V, which is the case in this project, then th
 
 #### Used libraries
 
-Optimized ILI9341 screen driver library for Teensy 4/4.1, with vsync and differential updates: <https://github.com/vindar/ILI9341_T4>
-TGX - a tiny/teensy graphics library: <https://github.com/vindar/tgx>
-Arduino OneButton Library: <https://github.com/mathertel/OneButton> (install via the Arduino library manager)
-IRremote Arduino Library: <https://github.com/Arduino-IRremote/Arduino-IRremote>
+1. Optimized ILI9341 screen driver library for Teensy 4/4.1, with vsync and differential updates: <https://github.com/vindar/ILI9341_T4>
+2. TGX - a tiny/teensy graphics library: <https://github.com/vindar/tgx>
+3. Arduino OneButton Library: <https://github.com/mathertel/OneButton> (install via the Arduino library manager)
+4. IRremote Arduino Library: <https://github.com/Arduino-IRremote/Arduino-IRremote>
 TeensyID: https://github.com/sstaub/TeensyID
 
 #### Used development software
