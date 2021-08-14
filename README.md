@@ -64,9 +64,9 @@ TeensyID: https://github.com/sstaub/TeensyID
 
 ### Used development software
 
-Arduino IDE 1.8.15
-Teensyduino, Version 1.54
-[optional: Microsoft Visual Studio Community 2019 + Visual Micro - Release 21.06.06.17]
+* Arduino IDE 1.8.15
+* Teensyduino, Version 1.54
+* [optional: Microsoft Visual Studio Community 2019 + Visual Micro - Release 21.06.06.17]
 
 #### All screenshots were transferred <u>directly</u> from the display
 
