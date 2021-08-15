@@ -60,12 +60,12 @@ If the display is operated with 3.3V, which is the case in this project, then th
 2. TGX - a tiny/teensy graphics library: <https://github.com/vindar/tgx>
 3. Arduino OneButton Library: <https://github.com/mathertel/OneButton> (install via the Arduino library manager)
 4. IRremote Arduino Library: <https://github.com/Arduino-IRremote/Arduino-IRremote>
-TeensyID: https://github.com/sstaub/TeensyID
+5. TeensyID: https://github.com/sstaub/TeensyID
 
 ### Used development software
 
-* Arduino IDE 1.8.15
-* Teensyduino, Version 1.54
+* Arduino IDE 1.8.15 (always needed)
+* Teensyduino, Version 1.54 (always needed)
 * [optional: Microsoft Visual Studio Community 2019 + Visual Micro - Release 21.06.06.17]
 
 #### All screenshots were transferred <u>directly</u> from the display
