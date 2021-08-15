@@ -26,17 +26,17 @@ Many other displays are also possible if they have the required connectors, have
 
 ### Display connection diagram
 
-| Display        | Teensy                                                   |
-| -------------- | -------------------------------------------------------- |
-| VCC            | **3.3V** (from Teensy, better 3.3V from separate LDO)    |
-| GND            | **GND** (top, between Vin and 3.3V)                      |
-| CS             | **9** (No option, you have to take this pin.)            |
-| RESET          | **6** (Any available pin can be used except VCC or GND.) |
-| DC/RS          | **10** (No option, you have to take this pin.)           |
-| SDI (**MOSI**) | **11**                                                   |
-| SCK            | **13**                                                   |
-| LED            | **5** (Either any available pin or VCC.)                 |
-| SDO (**MISO**) | **12**                                                   |
+| Display        | Teensy                                                       |
+| -------------- | ------------------------------------------------------------ |
+| VCC            | **3.3V** (from Teensy, better 3.3V from separate LDO)        |
+| GND            | **GND** (on top, between Vin and 3.3V)                       |
+| CS             | **9** (any available digital pin)                            |
+| RESET          | **6** (any available digital pin, but not 3.3V or GND)       |
+| DC/RS          | **10** (!!! IMPORTANT !!!)                                   |
+| SDI (**MOSI**) | **11**                                                       |
+| SCK            | **13**                                                       |
+| LED            | **5** (any available pin will do or connect to +3.3V through a small resistor 50 to 100 Ohm) |
+| SDO (**MISO**) | **12**                                                       |
 
 If the display is operated with 3.3V, which is the case in this project, then the jumper **J1** on the display must be closed!
 
