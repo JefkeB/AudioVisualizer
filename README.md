@@ -38,7 +38,7 @@ Many other displays are also possible if they have the required connectors, have
 | LED            | **5** (any available pin will do or connect to +3.3V through a small resistor 50 to 100 Ohm) |
 | SDO (**MISO**) | **12**                                                       |
 
-¹: If the display is operated with 3.3V, which is the case in this project, then the jumper **J1** on the display must be closed!
+¹ If the display is operated with 3.3V, which is the case in this project, then the jumper **J1** on the display must be closed!
 
 ### Connection of the pushbutton
 
