@@ -66,7 +66,7 @@ If the display is operated with 3.3V, which is the case in this project, then th
 ### Used development software
 
 * Arduino IDE 1.8.15 (always needed)
-* Teensyduino, Version 1.54 (always needed)
+* Teensyduino, Version 1.54 (always needed, versions below 1.54 will not work)
 * [optional: Microsoft Visual Studio Community 2019 + Visual Micro - Release 21.06.06.17]
 
 #### All screenshots were transferred <u>directly</u> from the display
