@@ -1,0 +1,12 @@
+Still needs a fix in the ILI9341_T4 driver
+
+change call to function _clip so all the paramters are double. 
+Else we get an error while compiling
+
+void setLateStartRatio(double ratio = ILI9341_T4_DEFAULT_LATE_START_RATIO)
+{
+	waitUpdateAsyncComplete(); // no need to wait for sync. 
+	_late_start_ratio = _clip(ratio, static_cast<double>(0.1), static_cast<double>(0.9));
+	statsReset();
+	resync();
+}

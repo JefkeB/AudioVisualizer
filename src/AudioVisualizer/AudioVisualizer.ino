@@ -25,9 +25,9 @@
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * !!! WICHTIG !!!
  * Die GNU General Public License (GNU GPL) verpflichtet den Nutzer dazu, bei Weiterverbreitung der Software
- * in ihrer ursprünglichen oder veränderten Form (sog. abgeleitete Werke), diese ebenfalls unter die Bedingungen der GPL zu stellen (Copyleft).
- * Hält sich der Lizenznehmer nicht an die Bedingungen, erlischt die Befugnis zur freien Benutzung rückwirkend!
- * Daher ist der Verwender gehalten, ebenfalls den Quellcode zugänglich zu machen und die abgeleitete Software wiederum der GPL zu unterwerfen.
+ * in ihrer ursprï¿½nglichen oder verï¿½nderten Form (sog. abgeleitete Werke), diese ebenfalls unter die Bedingungen der GPL zu stellen (Copyleft).
+ * Hï¿½lt sich der Lizenznehmer nicht an die Bedingungen, erlischt die Befugnis zur freien Benutzung rï¿½ckwirkend!
+ * Daher ist der Verwender gehalten, ebenfalls den Quellcode zugï¿½nglich zu machen und die abgeleitete Software wiederum der GPL zu unterwerfen.
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  *
  * Special thanks to Bodmer <https://github.com/Bodmer> for the AA drawing routines and the rainbow colors!
@@ -76,7 +76,7 @@
 #include <Wire.h>
 #include <Audio.h>
 #include "SPI.h"
-#include "ILI9341Driver.h"
+#include <ILI9341Driver.h>
 #include <tgx.h> 
 #include <EEPROM.h>
 #include <OneButton.h>

@@ -1,3 +1,5 @@
+#include "GFX.h"
+
 /// <summary>
 /// initialize display
 /// </summary>
