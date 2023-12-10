@@ -54,9 +54,12 @@
  //////////////////////////////////////////////////////////////////////////////////////////////////
 
 #define VERSION "v2.0.0, 14.08.2021"
-#define SHOWLOGO                true  // show logo
+#define SHOWLOGO                false  // show logo
 #define BUTTON                     0  // PIN0
 #define IR                         4  // PIN4
+
+#define I2S                         false
+#define SPDIF                       (!I2S)
 
 // set the pins: here for SPI0 on Teensy 4.x
 // ***  Recall that DC must be on a valid cs pin !!! ***
@@ -94,6 +97,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+#if I2S
 /// <summary>
 /// inherit from the 'AudioControlSGTL5000' class to modify the CHIP_ANA_ADC_CTRL register
 /// </summary>
@@ -102,6 +106,7 @@ class mSGTL5000 : public AudioControlSGTL5000 {
 public:
     void attGAIN(uint8_t att) { modify(0x0020, (att & 1) << 8, 1 << 8); }
 };
+#endif
 
 // namespace for draw primitives
 using namespace tgx;
@@ -133,34 +138,69 @@ decode_results results;
 // instantiate button object
 OneButton btn(BUTTON, true, true);
 
-// GUItool: begin automatically generated code
-AudioInputI2S            i2s1;           //xy=205,270
-AudioOutputI2S           i2s2;           //xy=233.00000381469727,400.0000057220459
-AudioAnalyzeFFT1024      fft1024_1;      //xy=425.00000762939453,132.00000190734863
-AudioAnalyzeFFT1024      fft1024_2;      //xy=426.00000381469727,320.0000047683716
-AudioAnalyzeRMS          rms1;           //xy=431.00000381469727,93.00000190734863
-AudioRecordQueue         queue2;         //xy=431.00000381469727,280.00000381469727
-AudioAnalyzePeak         peak1;          //xy=432.00000762939453,54.000003814697266
-AudioRecordQueue         queue1;         //xy=432.00000381469727,171.00000381469727
-AudioMixer4              mixer1;         //xy=432.00000381469727,225.00000381469727
-AudioAnalyzeRMS          rms2;           //xy=433.00000762939453,359.0000047683716
-AudioAnalyzePeak         peak2;          //xy=435.00000762939453,399.0000057220459
-AudioAnalyzeFFT1024      fft1024_3;      //xy=566.0000076293945,225.00000286102295
-AudioConnection          patchCord1(i2s1, 0, queue1, 0);
-AudioConnection          patchCord2(i2s1, 0, peak1, 0);
-AudioConnection          patchCord3(i2s1, 0, rms1, 0);
-AudioConnection          patchCord4(i2s1, 0, fft1024_1, 0);
-AudioConnection          patchCord5(i2s1, 0, mixer1, 0);
-AudioConnection          patchCord6(i2s1, 0, i2s2, 0);
-AudioConnection          patchCord7(i2s1, 1, queue2, 0);
-AudioConnection          patchCord8(i2s1, 1, fft1024_2, 0);
-AudioConnection          patchCord9(i2s1, 1, rms2, 0);
-AudioConnection          patchCord10(i2s1, 1, peak2, 0);
-AudioConnection          patchCord11(i2s1, 1, mixer1, 1);
-AudioConnection          patchCord12(i2s1, 1, i2s2, 1);
-AudioConnection          patchCord13(mixer1, fft1024_3);
-mSGTL5000                sgtl5000_1;
-// GUItool: end automatically generated code
+#if I2S
+    // GUItool: begin automatically generated code
+    AudioInputI2S            i2s1;           //xy=205,270
+    AudioOutputI2S           i2s2;           //xy=233.00000381469727,400.0000057220459
+    AudioAnalyzeFFT1024      fft1024_1;      //xy=425.00000762939453,132.00000190734863
+    AudioAnalyzeFFT1024      fft1024_2;      //xy=426.00000381469727,320.0000047683716
+    AudioAnalyzeRMS          rms1;           //xy=431.00000381469727,93.00000190734863
+    AudioRecordQueue         queue2;         //xy=431.00000381469727,280.00000381469727
+    AudioAnalyzePeak         peak1;          //xy=432.00000762939453,54.000003814697266
+    AudioRecordQueue         queue1;         //xy=432.00000381469727,171.00000381469727
+    AudioMixer4              mixer1;         //xy=432.00000381469727,225.00000381469727
+    AudioAnalyzeRMS          rms2;           //xy=433.00000762939453,359.0000047683716
+    AudioAnalyzePeak         peak2;          //xy=435.00000762939453,399.0000057220459
+    AudioAnalyzeFFT1024      fft1024_3;      //xy=566.0000076293945,225.00000286102295
+    AudioConnection          patchCord1(i2s1, 0, queue1, 0);
+    AudioConnection          patchCord2(i2s1, 0, peak1, 0);
+    AudioConnection          patchCord3(i2s1, 0, rms1, 0);
+    AudioConnection          patchCord4(i2s1, 0, fft1024_1, 0);
+    AudioConnection          patchCord5(i2s1, 0, mixer1, 0);
+    AudioConnection          patchCord6(i2s1, 0, i2s2, 0);
+    AudioConnection          patchCord7(i2s1, 1, queue2, 0);
+    AudioConnection          patchCord8(i2s1, 1, fft1024_2, 0);
+    AudioConnection          patchCord9(i2s1, 1, rms2, 0);
+    AudioConnection          patchCord10(i2s1, 1, peak2, 0);
+    AudioConnection          patchCord11(i2s1, 1, mixer1, 1);
+    AudioConnection          patchCord12(i2s1, 1, i2s2, 1);
+    AudioConnection          patchCord13(mixer1, fft1024_3);
+    mSGTL5000                sgtl5000_1;
+    // GUItool: end automatically generated code
+#endif
+
+
+
+#if SPDIF
+    // GUItool: begin automatically generated code
+    AsyncAudioInputSPDIF3    spdif_async1;   //xy=421.75,457.75
+    AudioAnalyzeFFT1024      fft1024_2;      //xy=919.75,807
+    AudioRecordQueue         queue2;         //xy=924.75,767
+    AudioAnalyzeRMS          rms2;           //xy=926.75,846
+    AudioAnalyzePeak         peak2;          //xy=928.75,886
+    AudioAnalyzeFFT1024      fft1024_1;      //xy=941.75,196
+    AudioMixer4              mixer1;         //xy=945.75,454
+    AudioAnalyzeRMS          rms1;           //xy=947.75,157
+    AudioAnalyzePeak         peak1;          //xy=948.75,118
+    AudioRecordQueue         queue1;         //xy=948.75,235
+    AudioAnalyzeFFT1024      fft1024_3;      //xy=1079.75,454
+    AudioConnection          patchCord1(spdif_async1, 0, peak1, 0);
+    AudioConnection          patchCord2(spdif_async1, 0, rms1, 0);
+    AudioConnection          patchCord3(spdif_async1, 0, fft1024_1, 0);
+    AudioConnection          patchCord4(spdif_async1, 0, queue1, 0);
+    AudioConnection          patchCord5(spdif_async1, 0, mixer1, 0);
+    AudioConnection          patchCord6(spdif_async1, 1, mixer1, 1);
+    AudioConnection          patchCord7(spdif_async1, 1, queue2, 0);
+    AudioConnection          patchCord8(spdif_async1, 1, fft1024_2, 0);
+    AudioConnection          patchCord9(spdif_async1, 1, rms2, 0);
+    AudioConnection          patchCord10(spdif_async1, 1, peak2, 0);
+    AudioConnection          patchCord11(mixer1, fft1024_3);
+
+    AudioOutputI2S           i2s2;           //xy=233.00000381469727,400.0000057220459
+    AudioConnection          patchCord12(spdif_async1, 0, i2s2, 0);
+    AudioConnection          patchCord13(spdif_async1, 1, i2s2, 1);
+    // GUItool: end automatically generated code
+#endif
 
 /// <summary>
 /// setup
@@ -184,6 +224,8 @@ void setup() {
 
     // Audio
     AudioMemory(64);
+
+#if I2S    
     sgtl5000_1.enable();
     sgtl5000_1.inputSelect(AUDIO_INPUT_LINEIN);
     sgtl5000_1.lineOutLevel(13); // 3.16 Volts p-p
@@ -195,6 +237,7 @@ void setup() {
     sgtl5000_1.autoVolumeDisable();
     sgtl5000_1.surroundSoundDisable();
     sgtl5000_1.enhanceBassDisable();
+#endif    
 
     // fft
     fft1024_1.windowFunction(AudioWindowHanning1024);
